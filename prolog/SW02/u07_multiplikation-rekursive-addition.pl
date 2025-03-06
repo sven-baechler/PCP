@@ -5,6 +5,7 @@ mult(_, 0, 0). % Multiplikation mit 0 gibt immer 0
 % wobei der Teil (A * (B-1)) rekursiv aufgerufen wird
 
 mult(A, B, Result) :-
+    B > 0, % Rekursion terminieren
     B1 is B - 1, % B dekrementieren
     mult(A, B1, R1), % rekursiver Aufruf mit B-1
     Result is R1 + A. % A zum (Zwischen-)Resultat addieren
