@@ -1,0 +1,1 @@
+bigger(dog, elephant).
