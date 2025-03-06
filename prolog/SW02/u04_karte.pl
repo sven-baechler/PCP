@@ -7,18 +7,18 @@ n(yellow, red).
 n(yellow, green).
 
 % Alle Kantone
-colors(Lu, Nw, Ow, Sz, Ur, Zg) :-
-Ur = yellow, % Uri ist Gelb
-Sz = red, % Schwyz ist rot
-n(Ur, Ow), n(Ur, Nw), n(Ur, Sz), % Nachbarkantone von Uri
-n(Nw, Ow), n(Nw, Lu), n(Nw, Sz), % Nachbarkantone von Nidwalden
-n(Ow, Lu), % Nachbarkantone von Obwalden
-n(Lu, Sz), n(Lu, Zg), % Nachbarkantone von Luzern
-n(Zg, Sz). % Nachbarkantone von Zug
+colors(LU, NW, OW, SZ, UR, ZG) :-
+UR = yellow, % Uri ist Gelb
+SZ = red, % Schwyz ist rot
+n(UR, OW), n(UR, NW), n(UR, SZ), % Nachbarkantone von Uri
+n(NW, OW), n(NW, LU), n(NW, SZ), % Nachbarkantone von Nidwalden
+n(OW, LU), % Nachbarkantone von Obwalden
+n(LU, SZ), n(LU, ZG), % Nachbarkantone von Luzern
+n(ZG, SZ). % Nachbarkantone von Zug
 % Nachbarkantone von Schwyz wurden schon alle erwähnt
 
 % Es gibt nur eine mögliche Lösung:
-% colors(Lu, Nw, Ow, Sz, Ur, Zg).
-% Lu = Ur, Ur = yellow,
-% Nw = Zg, Zg = green,
-% Ow = Sz, Sz = red ;
+% colors(LU, NW, OW, SZ, UR, ZG).
+% LU = UR, UR = yellow,
+% NW = ZG, ZG = green,
+% OW = SZ, SZ = red ;
