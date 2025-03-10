@@ -4,7 +4,8 @@
 fak(0, 1). % simple case
 fak(N, F) :-
     fak_as(N, F), % überprüfen, ob wert bereits in fak_as/2 gespeichert wurde
-    format('(Hinweis: Fakulät von ~w war gespeichert.)', [N]).
+    format('(Hinweis: Fakulät von ~w war gespeichert.)', [N]),
+    !. % ein green cut verhindert, dass weitere ergebnisse angezeigt werden
 fak(N, F) :- % general case
     N > 0, % argument test
     N1 is N - 1, % evaluate N-1
