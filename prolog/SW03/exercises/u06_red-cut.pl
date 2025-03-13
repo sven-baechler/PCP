@@ -1,4 +1,3 @@
-% Aufgabe 6)
 % Permutationen erzeugen
 % L = [_, _, _], member(a, L), member(b, L), member(c, L).
 
