@@ -51,7 +51,7 @@ sudoku(JSONReply, Solution) :-
     Problem = JSONReply.sudoku, % Speichert die Sudoku-Matrix aus der JSON Reply in Problem
     maplist(replace_0, Problem, Solution), % alle 0 (leere Felder) durch _ ersetzen und in Solution speichern
     Solution = [A,B,C,D,E,F,G,H,I], % die Matrix (Solution) in 9 Listen aufteilen
-    sudoku_local([A,B,C,D,E,F,G,H,I]). % die 9 Listen mit sudoku_local lösen
+    sudoku_local([A,B,C,D,E,F,G,H,I]). % die 9 Listen mit sudoku_local/1 lösen
 
 % Prädikat, um die eine Liste mit 0 zu _ ändern.
 replace_0([], []). % Basisfall: leere Liste bleibt eine Leere Liste
