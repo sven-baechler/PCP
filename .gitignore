@@ -1,0 +1,9 @@
+.lsp/.cache
+.clj-kondo/.cache
+
+/clojure/.calva/output-window
+/clojure/.calva/repl.calva-repl
+/clojure/.lsp/.cache
+/clojure/.clj-kondo/.cache
+
+/clojure/.vscode
