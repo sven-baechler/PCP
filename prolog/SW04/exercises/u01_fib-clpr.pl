@@ -20,7 +20,7 @@ fib_clp(N, F) :-
 % Stack limit (1.0Gb) exceeded
 
 % Aufgabe b: Wieso tritt dieses Problem auf?
-% Weil versucht wird eine weitere Lösung zu finden. Da Fibonacci eine unendliche Zahlenfolge ist, wird immer weiter gesucht bis der Stack voll ist.
+% Weil versucht wird eine weitere Lösung zu finden. Es gibt jedoch nur eine Lösung. Es wird immer weiter gesucht bis der Stack voll ist.
 % CLP versucht die Gleichung zu lösen
 
 % Aufgabe c: Lässt sich das oben beschriebene Problem einfach beheben?
