@@ -35,10 +35,19 @@ relationship(JSONReply, Solution) :-
     atom_string(FirstPerson, JSONReply.firstPerson),
     atom_string(SecondPerson, JSONReply.secondPerson),
     atom_string(Relationship, JSONReply.relationship),
-    % call ruft das Prädikat parent/2, mother/2, father/2, sibling/2, grandmother/2 oder offspring/2 auf (aus SW02/u01_verwandtschaftsbeziehungen).
     % call(Prädikat, 1. Argument, 2. Argument)
     % CONDITION -> TRUE ; FALSE
-    (call(Relationship, FirstPerson, SecondPerson) -> Solution = "true" ; Solution = "false").
+    %(call(Relationship, FirstPerson, SecondPerson) -> Solution = "true" ; Solution = "false").
+    solution(Relationship, FirstPerson, SecondPerson, Solution).
+
+% Wenn die Verwandtschaftsbeziehung true gibt, Solution auf "true" setzen
+solution(Relationship, FirstPerson, SecondPerson, "true") :- 
+    % call ruft das Prädikat parent/2, mother/2, father/2, sibling/2, grandmother/2 oder offspring/2 auf (aus SW02/u01_verwandtschaftsbeziehungen).
+    call(Relationship, FirstPerson, SecondPerson),
+    % Red Cut, dass das zweite solution/4 Prädikat nicht ausgeführt wird
+    !.
+% Sonst (wenn die Verwandtschaftsbeziehung false gibt), Solution auf "false" setzen
+solution(_, _, _, "false").
 
 % das Prädikat grandfather/2 musste noch ergänzt werden
 % Predicate father/2 und parent/2 not defined Fehlermeldung kann ignoriert werden, werden aus SW02/u01_verwandtschaftsbeziehungen eingebunden.
